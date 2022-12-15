@@ -48,14 +48,15 @@ export function App() {
       <div className={styles.wrapper}>
        <Sidebar />
         <main>
-          <Post 
-            author="Leonardo Souza" 
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, soluta illum provident perferendis tempora perspiciatis fuga dolore neque! Dolorum, nulla quas? Dolore reprehenderit doloribus error saepe a temporibus eum numquam!"
-          />
-          <Post 
-            author="Leticia Lima"
-            content=" Clinica life a melhor de coité"
-          />
+          {posts.map(post => {
+            return (
+              <Post 
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}            
+              />
+            )
+          })}
         </main>
       </div>
     </div>
